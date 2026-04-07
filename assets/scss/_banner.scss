@@ -1,0 +1,35 @@
+@use 'variables' as *;
+
+.demo-top-bar {
+    background-color: rgba($bg-card, 0.8); // Color suave basado en tu paleta
+    color: rgba($text-muted, 0.8);
+    text-align: center;
+    padding: 8px 15px;
+    font-size: 0.75rem;
+    border-bottom: 1px solid rgba($accent, 0.1);
+    transition: transform 0.4s ease, opacity 0.4s ease; // Animación suave
+    position: relative;
+    z-index: 2000;
+    width: 100%;
+
+    p {
+        margin: 0;
+        letter-spacing: 0.5px;
+    }
+
+    a {
+        color: $accent;
+        text-decoration: none;
+        font-weight: 600;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    // Clase que agregaremos con JS al scrolear
+    &.hidden-banner {
+        transform: translateY(-100%);
+        opacity: 0;
+        pointer-events: none; // Para que no bloquee clics mientras es invisible
+    }
+}

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IRQ COMPUTACION | Servicio Técnico de PC y Notebooks</title>
+
+    <!-- FUENTES: Inter para un look moderno y tecnológico -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <!-- BOOTSTRAP 5 CSS: Framework para diseño responsivo -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- BOOTSTRAP ICONS: Iconos oficiales de Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <!-- ESTILOS PERSONALIZADOS: Tu archivo compilado de Sass -->
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+
+    <!-- ============================================
+         BANNER DE SIMULACIÓN (Gabo Web)
+         ============================================ -->
+    <div id="demo-banner" class="demo-top-bar">
+        <p>Este sitio es una simulación creada con fines ilustrativos para el portfolio de <a href="https://gaboweb.com.ar" target="_blank">Gabo Web</a>.</p>
+    </div>
+
+
+    <!-- ============================================
+         NAVBAR / NAVEGACIÓN
+         ============================================ -->
+   <nav class="navbar navbar-expand-lg sticky-top navbar-dark">
+    <div class="container">
+        <a class="navbar-brand logo-irq d-flex align-items-center" href="#">
+            <i class="bi bi-cpu-fill me-2 logo-icon"></i>
+            IRQ<span>COMPUTACION</span>
+        </a>
+
+            
+            <!-- Botón Hamburguesa para móviles -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Enlaces de navegación -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto text-center">
+                    <li class="nav-item"><a class="nav-link px-3" href="#inicio">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#servicios">Servicios</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#nosotros">Sobre Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- HERO SECTION -->
+<header id="inicio" class="hero-section d-flex align-items-center">
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- Columna de Texto -->
+            <div class="col-lg-7 text-center text-lg-start">
+                <span class="badge-tech mb-3">Servicio Técnico Especializado</span>
+                <h1 class="display-3 fw-bold mb-3">
+                    Expertos en <span class="text-accent">Hardware</span> de Alto Nivel
+                </h1>
+                <p class="lead mb-4 text-secondary">
+                    Diagnóstico preciso y reparación avanzada para PC, Notebooks y equipos Gaming. Devolvemos la potencia a tus herramientas de trabajo.
+                </p>
+                <div class="hero-btns d-flex gap-3 justify-content-center justify-content-lg-start">
+                    <a href="#contacto" class="btn-accent">Iniciar Consulta</a>
+                    <a href="#servicios" class="btn-outline">Ver Servicios</a>
+                </div>
+            </div>
+            
+            <!-- Columna de Imagen/Efecto -->
+            <div class="col-lg-5 d-none d-lg-flex justify-content-center">
+                <div class="hero-visual">
+                    <div class="glow-circle"></div>
+                    <i class="bi bi-cpu-fill display-1 hero-icon"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+    <!-- ============================================
+         SECCIÓN SERVICIOS (Grilla responsiva)
+         ============================================ -->
+    <section id="servicios" class="py-5 bg-dark-variant">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold text-white">Nuestras <span class="text-accent">Especialidades</span></h2>
+                <p class="text-secondary">Soluciones integrales para usuarios exigentes</p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Tarjeta 1: Reparación -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card p-4 h-100">
+                        <i class="bi bi-tools text-accent fs-1 mb-3 d-block"></i>
+                        <h3>Soporte Técnico</h3>
+                        <p class="text-secondary small">Reparación de hardware, cambios de pantalla, teclados y componentes internos.</p>
+                    </div>
+                </div>
+                <!-- Tarjeta 2: Gaming -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card p-4 h-100">
+                        <i class="bi bi-gpu-card text-accent fs-1 mb-3 d-block"></i>
+                        <h3>Armado Gaming</h3>
+                        <p class="text-secondary small">Montaje personalizado con gestión de cables profesional y optimización de BIOS.</p>
+                    </div>
+                </div>
+                <!-- Tarjeta 3: Software -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card p-4 h-100">
+                        <i class="bi bi-rocket-takeoff text-accent fs-1 mb-3 d-block"></i>
+                        <h3>Optimización OS</h3>
+                        <p class="text-secondary small">Eliminación de malware, backups de datos y reinstalación de sistemas sin pérdida.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================
+         SECCIÓN CONTACTO
+         ============================================ -->
+    <section id="contacto" class="py-5">
+        <div class="container py-5">
+            <div class="row g-5 justify-content-between">
+                <!-- Información de contacto -->
+                <div class="col-lg-5">
+                    <h2 class="fw-bold mb-4 text-white">¿Tu equipo presenta <span class="text-accent">errores?</span></h2>
+                    <p class="text-secondary mb-4">Envianos tu consulta y te responderemos a la brevedad con un presupuesto estimado.</p>
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="bi bi-geo-alt text-accent fs-4 me-3"></i>
+                        <span>Buenos Aires, Argentina</span>
+                    </div>
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="bi bi-envelope text-accent fs-4 me-3"></i>
+                        <span>soporte@irqcomputacion.com</span>
+                    </div>
+                </div>
+                <!-- Formulario -->
+                <div class="col-lg-6">
+                    <div class="contact-form-box p-4">
+                        <form>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" placeholder="Nombre completo">
+                            </div>
+                            <div class="mb-3">
+                                <input type="email" class="form-control" placeholder="Tu Email">
+                            </div>
+                            <div class="mb-3">
+                                <textarea class="form-control" rows="4" placeholder="Describí el problema de tu equipo..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-accent w-100 fw-bold">Enviar Consulta</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================
+         FOOTER / PIE DE PÁGINA
+         ============================================ -->
+    <footer class="py-4 border-top border-secondary border-opacity-10 text-center">
+        <div class="container">
+            <p class="mb-0 text-secondary small">© 2026 IRQ COMPUTACION - Diseñado por <strong>Gabo Web</strong></p>
+        </div>
+    </footer>
+
+
+    <!-- ============================================
+         BOTÓN FLOTANTE WHATSAPP
+         ============================================ -->
+    <a href="https://wa.me/5491112345678" class="whatsapp-float" target="_blank">
+        <i class="bi bi-whatsapp"></i>
+    </a>
+
+
+    <!-- ============================================
+         SCRIPTS: Bootstrap JS y Main.js
+         ============================================ -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+</html>

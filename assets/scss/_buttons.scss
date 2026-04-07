@@ -1,0 +1,39 @@
+@use 'variables' as *;
+
+.btn-accent {
+    background: linear-gradient(135deg, $accent, $secondary);
+    color: $bg-dark !important;
+    padding: 14px 32px;
+    border-radius: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    display: inline-block;
+    border: none;
+    box-shadow: 0 4px 15px rgba($accent, 0.3);
+    
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba($accent, 0.5);
+    }
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid rgba(#fff, 0.2);
+    color: #fff !important;
+    padding: 14px 32px;
+    border-radius: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    display: inline-block;
+
+    &:hover {
+        border-color: $accent;
+        color: $accent !important;
+        background: rgba($accent, 0.05);
+    }
+}

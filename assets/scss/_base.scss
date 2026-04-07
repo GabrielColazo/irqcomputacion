@@ -1,0 +1,78 @@
+@use 'variables' as *;
+
+// 1. Reset de Box-sizing: Fundamental para que el padding no agrande los elementos
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+// 2. Configuración de raíz
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+    // Evita que el tamaño de fuente cambie al rotar el móvil
+    -webkit-text-size-adjust: 100%; 
+}
+
+// 3. Configuración del Body
+body {
+    background-color: $bg-dark;
+    color: $text-main;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6; // Mejor legibilidad
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased; // Suavizado de fuentes en macOS/iOS
+    -moz-osx-font-smoothing: grayscale;
+}
+
+// 4. Reset de elementos multimedia
+img, picture, svg, video, canvas {
+    max-width: 100%;
+    display: block; // Evita espacios extraños debajo de las imágenes
+    height: auto;
+}
+
+// 5. Reset de Tipografía y Enlaces
+h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word; // Evita que títulos largos rompan el layout
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+ul, ol {
+    list-style: none; // Quitamos los puntos de las listas (Bootstrap ya lo hace en muchos casos, pero aquí queda limpio)
+}
+
+// 6. Reset de Formularios (Crucial para el área de Soporte Técnico)
+input, button, textarea, select {
+    font: inherit; // Heredan la fuente del body, no la del sistema
+    outline: none;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+textarea {
+    resize: vertical; // Solo permite estirar hacia abajo, no hacia los costados
+}
+
+// 7. Quitar el resaltado azul al tocar en móviles
+a, button, input, textarea {
+    -webkit-tap-highlight-color: transparent;
+}
+
+// 8. Selección de texto personalizada para IRQ COMPUTACION
+::selection {
+    background-color: rgba($accent, 0.3);
+    color: #fff;
+}
