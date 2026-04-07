@@ -1,15 +1,18 @@
 @use 'variables' as *;
 
 .hero-section {
-    min-height: 95vh; // Ocupa casi toda la pantalla
-    padding: 120px 0 60px;
+    // 1. Quitamos el min-height global para que no afecte a móviles
     position: relative;
     overflow: hidden;
-    // Fondo radial para dar profundidad
+    display: flex;
+    align-items: center;
+    
+    // 2. Padding base para móviles (ajustado para que no sobre tanto espacio)
+    padding: 100px 0 40px; 
+    
     background: radial-gradient(circle at 70% 30%, rgba($secondary, 0.15), transparent 40%),
                 radial-gradient(circle at 20% 70%, rgba($accent, 0.08), transparent 40%);
 
-    // Badge pequeño arriba del título
     .badge-tech {
         display: inline-block;
         padding: 5px 15px;
@@ -34,9 +37,11 @@
     .lead {
         max-width: 600px;
         font-size: 1.15rem;
+        // Centrado en móvil por defecto
+        margin-left: auto;
+        margin-right: auto;
     }
 
-    // Parte Visual (Icono derecha)
     .hero-visual {
         position: relative;
         width: 300px;
@@ -47,7 +52,7 @@
 
         .hero-icon {
             font-size: 10rem;
-            color: rgba(#fff, 0.05); // Icono de fondo muy sutil
+            color: rgba(#fff, 0.05);
             filter: drop-shadow(0 0 20px rgba($accent, 0.2));
             animation: float 6s ease-in-out infinite;
             z-index: 2;
@@ -59,24 +64,44 @@
             height: 250px;
             background: $accent;
             border-radius: 50%;
-            filter: blur(120px); // Brillo desenfocado de fondo
+            filter: blur(120px);
             opacity: 0.2;
             z-index: 1;
         }
     }
 }
 
-// Animación de flotado para el icono
+// --- MEDIA QUERIES ---
+
+// Ajustes para Escritorio (Desktop)
+@media (min-width: 992px) {
+    .hero-section {
+        min-height: 90vh; // Solo se estira en pantallas grandes
+        padding: 0; // El centrado lo hace el flex align-items-center
+        
+        .lead {
+            margin-left: 0; // Alineado a la izquierda en desktop
+        }
+    }
+}
+
+// Ajustes para Móviles (Mobile)
+@media (max-width: 991.98px) {
+    .hero-section {
+        min-height: auto; // Altura automática según el contenido
+        padding-top: 80px; // Espacio justo para la navbar fija
+        
+        h1 { 
+            font-size: 2.5rem; // Un poco más chico para que no ocupe 5 líneas
+        }
+        
+        .lead { 
+            font-size: 1rem; 
+        }
+    }
+}
+
 @keyframes float {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-20px); }
-}
-
-// Responsive: achicar textos en móviles
-@media (max-width: 991.98px) {
-    .hero-section {
-        padding: 100px 0 40px;
-        h1 { font-size: 2.8rem; }
-        .lead { font-size: 1rem; }
-    }
 }

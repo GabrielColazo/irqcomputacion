@@ -1,0 +1,62 @@
+@use 'variables' as *;
+
+.contact-section {
+    background: $bg-dark;
+    padding-top: 80px;
+    padding-bottom: 100px;
+}
+
+.contact-card {
+    background: rgba($bg-card, 0.3);
+    border: 1px solid rgba($accent, 0.1);
+    padding: 2.5rem;
+    border-radius: 24px;
+    backdrop-filter: blur(10px);
+}
+
+// Estilos de los inputs
+.form-label {
+    color: rgba(#fff, 0.7);
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.form-control, .form-select {
+    background: rgba($bg-dark, 0.5);
+    border: 1px solid rgba(#fff, 0.1);
+    color: #fff;
+    padding: 12px 16px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+
+    &:focus {
+        background: rgba($bg-dark, 0.8);
+        border-color: $accent;
+        box-shadow: 0 0 10px rgba($accent, 0.2);
+        color: #fff;
+    }
+
+    &::placeholder {
+        color: rgba(#fff, 0.3);
+    }
+}
+
+// Iconos de info a la izquierda
+.icon-box {
+    width: 45px;
+    height: 45px;
+    background: rgba($accent, 0.1);
+    border: 1px solid rgba($accent, 0.2);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $accent;
+    font-size: 1.2rem;
+}
+
+// Animación simple para el botón al enviar (feedback visual)
+.btn-accent:active {
+    transform: scale(0.98);
+}

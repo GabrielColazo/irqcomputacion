@@ -1,0 +1,126 @@
+@use 'variables' as *;
+
+.services-section {
+    background: $bg-dark;
+    padding: 100px 0;
+    position: relative;
+
+    // --- Encabezado de Sección ---
+    .section-subtitle {
+        color: rgba(#fff, 0.7) !important; 
+        font-size: 1.1rem;
+        font-weight: 300;
+        letter-spacing: 0.5px;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    h2 {
+        margin-bottom: 1rem;
+        color: #fff;
+        
+        .text-accent {
+            color: $accent;
+            text-shadow: 0 0 15px rgba($accent, 0.3);
+        }
+    }
+}
+
+// --- Estilo de las Cards ---
+.service-card {
+    background: rgba($bg-card, 0.4);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(#fff, 0.05);
+    padding: 2.5rem 2rem;
+    border-radius: 20px;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    // Efecto de brillo al pasar el mouse
+    &:hover {
+        transform: translateY(-12px);
+        border-color: rgba($accent, 0.4);
+        background: rgba($bg-card, 0.6);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+
+        .card-icon {
+            transform: scale(1.1) rotate(5deg);
+            filter: drop-shadow(0 0 10px $accent);
+        }
+
+        .card-list li {
+            color: #fff;
+        }
+    }
+
+    .card-icon {
+        font-size: 2.5rem;
+        color: $accent;
+        margin-bottom: 1.5rem;
+        display: inline-block;
+        transition: all 0.4s ease;
+    }
+
+    h3 {
+        color: #fff;
+        font-size: 1.4rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+
+    p {
+        color: rgba(#fff, 0.6);
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    // --- Listas internas ---
+    .card-list {
+        margin-top: 1.5rem;
+        padding: 0;
+        list-style: none;
+
+        li {
+            font-size: 0.85rem;
+            color: rgba(#fff, 0.6);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+
+            i {
+                color: $accent;
+                font-size: 1rem;
+            }
+        }
+    }
+
+    // --- Card Destacada (Soporte Técnico) ---
+    &.active {
+        border-color: rgba($accent, 0.3);
+        background: linear-gradient(
+            145deg, 
+            rgba($bg-card, 0.8), 
+            rgba($bg-dark, 0.4)
+        );
+
+        // Etiqueta de Recomendado
+        &::after {
+            content: 'RECOMENDADO';
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 0.65rem;
+            font-weight: 800;
+            color: $accent;
+            letter-spacing: 1px;
+            border: 1px solid rgba($accent, 0.3);
+            padding: 4px 10px;
+            border-radius: 6px;
+            background: rgba($bg-dark, 0.5);
+        }
+    }
+}

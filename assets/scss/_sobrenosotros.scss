@@ -1,0 +1,109 @@
+@use 'variables' as *;
+
+.about-section {
+    background: $bg-dark;
+    padding: 100px 0;
+    border-top: 1px solid rgba($accent, 0.05);
+
+    .badge-tech {
+        display: inline-block;
+        padding: 6px 16px;
+        border-radius: 50px;
+        background: rgba($accent, 0.1);
+        border: 1px solid rgba($accent, 0.2);
+        color: $accent;
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 700;
+    }
+
+    h2 .text-accent {
+        color: $accent;
+        text-shadow: 0 0 20px rgba($accent, 0.4);
+    }
+
+    .lead {
+        color: rgba(#fff, 0.85);
+        font-size: 1.15rem;
+        line-height: 1.7;
+        strong { color: $accent; }
+    }
+
+    // Tags de características rápidas
+    .about-features {
+        .feature-tag {
+            background: rgba(#fff, 0.03);
+            border: 1px solid rgba(#fff, 0.1);
+            padding: 8px 16px;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            i { color: $accent; }
+        }
+    }
+
+    // --- Lado Visual ---
+    .about-visual {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        .about-icon {
+            font-size: 10rem;
+            color: rgba(#fff, 0.03);
+            filter: drop-shadow(0 0 15px rgba($accent, 0.2));
+            z-index: 2;
+        }
+
+        .glow-circle {
+            position: absolute;
+            width: 250px;
+            height: 250px;
+            background: $accent;
+            border-radius: 50%;
+            filter: blur(110px);
+            opacity: 0.12;
+            z-index: 1;
+        }
+
+        // El Badge de 10 años con diseño tipo "Sello"
+        .experience-badge {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba($bg-card, 0.8);
+            backdrop-filter: blur(10px);
+            border: 2px solid $accent;
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            box-shadow: 0 0 30px rgba(0,0,0,0.5), inset 0 0 15px rgba($accent, 0.2);
+            z-index: 3;
+
+            .number {
+                font-size: 2rem;
+                font-weight: 900;
+                color: $accent;
+                line-height: 1;
+            }
+            .text {
+                font-size: 0.7rem;
+                font-weight: 700;
+                text-transform: uppercase;
+                color: #fff;
+                margin-top: 5px;
+            }
+        }
+    }
+}

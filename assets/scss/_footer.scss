@@ -1,0 +1,178 @@
+@use 'variables' as *;
+
+.main-footer {
+    background: #020609; 
+    padding: 60px 0 30px; 
+    border-top: 1px solid rgba($accent, 0.1);
+    color: #fff;
+
+    // Marca IRQ
+    .footer-brand {
+        font-size: 1.4rem;
+        font-weight: 800;
+        text-decoration: none;
+        color: #fff;
+        span { color: $accent; }
+        .logo-icon { color: $accent; font-size: 1.6rem; }
+    }
+
+    // Títulos de secciones
+    .footer-title {
+        color: #fff;
+        font-size: 0.85rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 1.2rem;
+    }
+
+    // Párrafos y texto general
+    p.text-muted {
+        color: rgba(#fff, 0.5) !important; 
+        line-height: 1.6;
+        font-size: 0.85rem;
+    }
+
+    // --- ANIMACIÓN DE LINKS ---
+    .footer-link {
+        color: rgba(#fff, 0.6);
+        text-decoration: none;
+        font-size: 0.9rem;
+        position: relative;
+        padding: 4px 0;
+        transition: all 0.3s ease;
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background: $accent;
+            transform: scaleX(0);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        &:hover {
+            color: #fff;
+            text-shadow: 0 0 10px rgba($accent, 0.5);
+            &::after { transform: scaleX(1); }
+        }
+    }
+
+    // Iconos de Redes (Estilo Tech)
+    .social-links {
+        a {
+            width: 40px;
+            height: 40px;
+            background: rgba($accent, 0.05);
+            border: 1px solid rgba($accent, 0.2);
+            border-radius: 10px; 
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: $accent;
+            font-size: 1.2rem;
+            transition: all 0.4s ease;
+
+            &:hover {
+                background: $accent;
+                color: $bg-dark;
+                box-shadow: 0 0 20px rgba($accent, 0.4);
+                transform: translateY(-5px) rotate(8deg);
+            }
+        }
+    }
+
+    // Firma GABO WEB principal (Bloque de créditos)
+    .gaboweb-link {
+        font-size: 1.3rem;
+        font-weight: 900;
+        color: #fff !important;
+        text-decoration: none;
+        letter-spacing: 1px;
+        
+        span {
+            color: $accent;
+            text-shadow: 0 0 15px rgba($accent, 0.6);
+        }
+
+        &:hover {
+            opacity: 0.8;
+            letter-spacing: 2px;
+            transition: all 0.4s ease;
+        }
+    }
+
+    .footer-divider {
+        margin: 30px 0 20px;
+        border-color: rgba(#fff, 0.05);
+    }
+
+    // --- COPYRIGHT Y PORTFOLIO (ESTILO CENTRADO GABO WEB) ---
+    .footer-copy {
+        padding-top: 10px;
+        
+        p {
+            font-size: 0.8rem;
+            margin-bottom: 5px;
+            color: rgba(#fff, 0.4);
+        }
+
+        .footer-demo {
+            font-size: 0.75rem;
+            font-style: italic;
+            color: rgba(#fff, 0.4);
+            
+            a {
+                color: $accent;
+                text-decoration: none;
+                font-weight: 600;
+                transition: all 0.3s ease;
+                border-bottom: 1px solid transparent;
+
+                &:hover {
+                    color: #fff;
+                    border-bottom: 1px solid $accent;
+                    text-shadow: 0 0 8px rgba($accent, 0.5);
+                }
+            }
+        }
+    }
+}
+
+// --- RESPONSIVE OPTIMIZADO ---
+@media (max-width: 991.98px) {
+    .main-footer {
+        padding: 40px 0 20px;
+        text-align: center;
+
+        .footer-brand { justify-content: center; }
+
+        .nav-block {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            
+            .footer-link {
+                font-size: 0.85rem;
+                &:active {
+                    transform: scale(0.9);
+                    color: $accent;
+                }
+            }
+        }
+
+        .social-links {
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .footer-title { display: none; }
+
+        .footer-copy {
+            p { font-size: 0.75rem; }
+        }
+    }
+}

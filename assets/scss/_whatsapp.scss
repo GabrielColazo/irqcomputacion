@@ -1,0 +1,77 @@
+@use 'variables' as *;
+
+.whatsapp-flotante {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25d366; // Verde oficial
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    z-index: 9999;
+    box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    // FORZAR ICONO BLANCO
+    i {
+        color: #fff !important; 
+        font-size: 30px;
+        line-height: 0; // Para que el icono de Bootstrap no se desplace
+    }
+
+    &:hover {
+        background-color: #128c7e;
+        transform: scale(1.1);
+        
+        .tooltip-wa {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    // El cartelito que te gusta
+    .tooltip-wa {
+        position: absolute;
+        right: 75px;
+        background: #fff;
+        color: #333;
+        padding: 10px 18px;
+        border-radius: 10px;
+        font-size: 0.9rem;
+        font-weight: 700;
+        white-space: nowrap;
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.3s ease;
+        transform: translateX(15px);
+        box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+
+        // Flechita del cartel
+        &::after {
+            content: '';
+            position: absolute;
+            right: -6px;
+            top: 50%;
+            transform: translateY(-50%);
+            border-left: 8px solid #fff;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+        }
+    }
+}
+
+// Mobile
+@media (max-width: 767.98px) {
+    .whatsapp-flotante {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+        i { font-size: 25px; }
+        .tooltip-wa { display: none; }
+    }
+}
